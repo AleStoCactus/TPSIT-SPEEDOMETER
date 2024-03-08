@@ -15,18 +15,19 @@ var currentScale = 1;
 
 function setSpeed_GOD(speed){
     console.log(speed);
+    let km = document.getElementsByClassName("km")[0];
+    let el1 = document.getElementsByClassName("arrow-wrapper")[0];
 
-    //ROOKIE
-    if (speed == 30) {
-        currentScale = 4;
+    if (speed > 0) {
         for (i = 10; i <= speed; i = i + 10) {
+            currentScale += 1;
             console.log(i);
             let newClass = `speed-${i}`;
             let prevClass = `speed-${prevSpeed}`;
-            let el = document.getElementsByClassName("arrow-wrapper")[0];
-            if (el.classList.contains(prevClass)) {
-                el.classList.remove(prevClass);
-                el.classList.add(newClass);
+            km.innerText = speed;
+            if (el1.classList.contains(prevClass)) {
+                el1.classList.remove(prevClass);
+                el1.classList.add(newClass);
             }
             prevSpeed = i;
         }
@@ -41,77 +42,20 @@ function setSpeed_GOD(speed){
             let el = document.getElementsByClassName(tempClass)[0];
             el.classList.remove("active");
         }
-    }
-
-    //CAPTAIN
-    if (speed == 90) {
-        currentScale = 10;
-        for (i = 10; i <= speed; i = i + 10) {
-            console.log(i);
+        
+        currentScale = 1;
+    } else {
+        currentScale = 1;
+        i = 0;
             let newClass = `speed-${i}`;
             let prevClass = `speed-${prevSpeed}`;
-            let el = document.getElementsByClassName("arrow-wrapper")[0];
-            if (el.classList.contains(prevClass)) {
-                el.classList.remove(prevClass);
-                el.classList.add(newClass);
+            km.innerText = speed;
+            if (el1.classList.contains(prevClass)) {
+                el1.classList.remove(prevClass);
+                el1.classList.add(newClass);
             }
             prevSpeed = i;
-        }
-        let o = 1;
-        for (o = 1; o <= currentScale; o++) {
-            let tempClass = `notch${o}`;
-            let el = document.getElementsByClassName(tempClass)[0];
-            el.classList.add("active");
-        }
-        for (let j = o; j >= o && j <= 20; j++) {
-            let tempClass = `notch${j}`;
-            let el = document.getElementsByClassName(tempClass)[0];
-            el.classList.remove("active");
-        }
-    }
-
-    //GIGACHAD
-    if (speed == 180) {
-        currentScale = 19;
-        for (i = 10; i <= speed; i = i + 10) {
-            console.log(i);
-            let newClass = `speed-${i}`;
-            let prevClass = `speed-${prevSpeed}`;
-            let el = document.getElementsByClassName("arrow-wrapper")[0];
-            if (el.classList.contains(prevClass)) {
-                el.classList.remove(prevClass);
-                el.classList.add(newClass);
-            }
-            prevSpeed = i;
-        }
-        let o = 1;
-        for (o = 1; o <= currentScale; o++) {
-            let tempClass = `notch${o}`;
-            let el = document.getElementsByClassName(tempClass)[0];
-            el.classList.add("active");
-        }
-        for (let j = o; j >= o && j <= 20; j++) {
-            let tempClass = `notch${j}`;
-            let el = document.getElementsByClassName(tempClass)[0];
-            el.classList.remove("active");
-        }
-    }
-
-    //NOOB
-    if (speed == 0) {
-        currentScale = 0;
-        for (i = 0; i >= 0; i = i - 10) {
-            console.log(i);
-            let newClass = `speed-${i}`;
-            let prevClass = `speed-${prevSpeed}`;
-            let el = document.getElementsByClassName("arrow-wrapper")[0];
-            if (el.classList.contains(prevClass)) {
-                el.classList.remove(prevClass);
-                el.classList.add(newClass);
-            }
-            prevSpeed = i;
-        }
-        let o = 1;
+            let o = 1;
         for (o = 1; o <= currentScale; o++) {
             let tempClass = `notch${o}`;
             let el = document.getElementsByClassName(tempClass)[0];

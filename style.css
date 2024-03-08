@@ -294,3 +294,28 @@
     transform: rotate(180deg);
 }
 
+.speedometer-text {
+    width: 100px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 20;
+    left: 94px;
+    top: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.static {
+    font-size: 18px;
+}
+.dynamic {
+    margin-top: 10px;
+}
+.km {
+    font-size: 32px;
+}
+
+.unit {
+    font-size: 14px;
+    margin-left: 5px;
+}
